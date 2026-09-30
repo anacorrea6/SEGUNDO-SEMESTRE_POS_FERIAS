@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabor & Saber - Bootstrap via npm</title>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!--Importa o arquivo CSS do Boostrap instalado no npm-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
+      <!--
+    barra de navegação.
+      navbar = ativa o estilo de navegação do Bootstrap
+      navbar-expand-lg = expande o menu em telas grandes
+      bg-danger = coloca o fundo vermelho
+      navbar-dark = adapta os elementos para um fundo escuro
+    -->
+
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Sabor & Saber</a>
+        <!--navbar-brand = estilo para o nome/logo da página
+        fw-bold = deixa o texto em negrito
+        href="#" = link que aponta para o início da página-->
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <!--
+          Botão usado para abrir e fechar o menu em telas pequenas.
+
+          navbar-toggler = estilo do botão de menu do Bootstrap
+          type="button" = define que é um botão comum
+          data-bs-toggle="collapse" = informa que o botão controla um menu que pode abrir/fechar
+          data-bs-target="#menu" = indica qual elemento será controlado
+          aria-controls="menu" = melhora a acessibilidade
+          aria-expanded="false" = informa que o menu começa fechado
+          aria-label="Abrir menu" = descrição do botão para leitores de tela
+        -->
+          <span class="navbar-toggler-icon"></span>
+          <!--Icone de 3 linhas-->
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <!--Colapse permite esconcer ou mostrar o menu-->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#cardapio">Cardápio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#pedido">Faça seu Pedido</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5" id="cardapio">
+      <h2 class="text-center fw-bold mb-4">Nosso Cardápio</h2>
+
+      <div
+        class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3"
+        id="containerPratos"
+      ></div>
+    </main>
+
+    <section class="container my-5" id="pedido">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h2 class="text-center fw-bold mb-4">Faça seu Pedido</h2>
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="nome">Seu nome</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                placeholder="Digite seu nome completo"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="prato">Prato favorito</label>
+              <select class="form-select" id="prato">
+                <!--Criei uma lista de opções 
+                form-select aplica o estilo do Booststrap-->
+                <option>Feijoada Completa</option>
+                <option>Coxinha Artesanal</option>
+                <option>Brigadeiro Gourmet</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn btn-danger w-100 fw-bold">
+              Confirmar Pedido
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
