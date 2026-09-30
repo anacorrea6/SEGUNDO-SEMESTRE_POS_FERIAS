@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Quintal Pizza Bar</title>
+    <!-- Importa o nosso CSS, que por sua vez importa o Bootstrap -->
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+
+<body class="bg-light">
+    <!-- Navbar: componente do Bootstrap para navegação -->
+    <!-- navbar-expand-lg: menu expansivo em telas grandes -->
+    <!-- navbar-dark bg-dark: cores escuras para contraste -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- fw-bold fs-4: texto em negrito e tamanho 4 (maior) -->
+            <a class="navbar-brand fw-bold fs-4 text-warning" href="#">Do Quintal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto: margem à esquerda automática (alinha à direita) -->
+                    <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <!-- p-5: padding (espaçamento interno) de nível 5 em todos os lados -->
+    <!-- text-center: centraliza o texto -->
+    <!-- text-white: cor da fonte branca -->
+    <header class="hero-section bg-dark text-white text-center p-5">
+        <div class="container py-5">
+            <h1 class="display-3 fw-bold text-warning mb-3">Bem-vindo ao Do Quintal Pizza Bar</h1>
+            <p class="fs-4 fw-light mb-4">A verdadeira pizza artesanal com sabor de casa, num ambiente rústico e
+                acolhedor.</p>
+            <!-- btn btn-warning btn-lg: botão amarelo, tamanho grande -->
+            <a href="#cardapio" class="btn btn-warning btn-lg fw-bold">Ver Cardápio</a>
+        </div>
+    </header>
+
+    <!-- Seção de Cardápio (Grid e Cards) -->
+    <!-- my-5: margem vertical (cima e baixo) de nível 5 -->
+    <section id="cardapio" class="container my-5">
+        <h2 class="text-center fw-bold mb-5">Nosso Cardápio</h2>
+        <!-- row: inicia uma linha da grid do Bootstrap -->
+        <div class="row g-4"> <!-- g-4: gap (espaçamento) entre as colunas -->
+
+            <!-- col-12 col-md-6 col-lg-4: 12 colunas no celular (100%), 6 no tablet (50%), e 4 no PC (33%) -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <!-- card: componente visual de caixa -->
+                <!-- h-100: faz o card ocupar 100% da altura disponível -->
+                <div class="card h-100 shadow-sm border-0">
+                    <!-- card-body: corpo do card onde vai o conteúdo -->
+                    <div class="card-body text-center p-4">
+                        <h5 class="card-title fw-bold">Margherita</h5>
+                        <p class="card-text text-muted">Molho de tomate artesanal, mussarela fresca e manjericão.</p>
+                        <p class="fs-5 fw-bold text-success">R$ 45,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <h5 class="card-title fw-bold">Calabresa Rústica</h5>
+                        <p class="card-text text-muted">Calabresa fatiada, cebola roxa e um toque de pimenta.</p>
+                        <p class="fs-5 fw-bold text-success">R$ 50,00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <h5 class="card-title fw-bold">Quatro Queijos</h5>
+                        <p class="card-text text-muted">Mussarela, provolone, gorgonzola e parmesão.</p>
+                        <p class="fs-5 fw-bold text-success">R$ 55,00</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção de Contato (Formulário) -->
+    <!-- bg-white: fundo branco -->
+    <!-- py-5: padding vertical (cima e baixo) nível 5 -->
+    <section id="contato" class="bg-white py-5 border-top">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Faça seu Pedido</h2>
+            <div class="row justify-content-center">
+                <!-- justify-content-center: centraliza os itens da grid horizontalmente -->
+                <!-- col-md-8: ocupa 8 colunas de 12 (66%) em telas médias/grandes -->
+                <div class="col-12 col-md-8">
+                    <!-- Formulário Bootstrap -->
+                    <form class="p-4 border rounded shadow-sm bg-light">
+                        <!-- mb-3: margem inferior nível 3 -->
+                        <div class="mb-3">
+                            <label for="nome" class="form-label fw-semibold">Nome Completo</label>
+                            <!-- form-control: estiliza o input com o padrão Bootstrap -->
+                            <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pizza" class="form-label fw-semibold">Escolha a Pizza</label>
+                            <!-- form-select: estiliza caixas de seleção -->
+                            <select class="form-select" id="pizza">
+                                <option selected>Selecione...</option>
+                                <option value="1">Margherita</option>
+                                <option value="2">Calabresa Rústica</option>
+                                <option value="3">Quatro Queijos</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="observacao" class="form-label fw-semibold">Observações</label>
+                            <textarea class="form-control" id="observacao" rows="3"
+                                placeholder="Sem cebola, borda recheada, etc."></textarea>
+                        </div>
+                        <!-- btn btn-dark w-100: botão escuro que ocupa 100% da largura (w-100) -->
+                        <button type="submit" class="btn btn-warning w-100 fw-bold fs-5">Enviar Pedido</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer simples e moderno -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <p class="mb-0 text-white-50">© 2026 Do Quintal Pizza Bar. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Importa o nosso JS próprio como módulo, que importa o JS do Bootstrap -->
+    <script type="module" src="src/js/script.js"></script>
+</body>
+
+</html>
